@@ -14,7 +14,7 @@ func equalArr(a []int, b []int) bool {
 	return true
 }
 
-func TestCase1(t *testing.T) {
+func TestInvoke1(t *testing.T) {
 	if res := Invoke(10); !equalArr(res, []int{3, 9}) {
 		t.Fatal(res)
 	}
