@@ -1,7 +1,5 @@
 package p269
 
-import "fmt"
-
 func Invoke(n int, as [][]int) [][]int {
 	res := make([][]int, n)
 	for i, _ := range res {
@@ -17,6 +15,5 @@ func Invoke(n int, as [][]int) [][]int {
 		}
 	}
 
-	fmt.Println(res)
 	return res
 }
