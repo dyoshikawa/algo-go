@@ -19,9 +19,8 @@ func (s *Stack) Push(a int) {
 }
 
 func (s *Stack) Pop() int {
-	last := len(s.Data) - 1
-	popped := s.Data[last]
-	s.Data = util_int.UnsetArr(s.Data, last)
+	popped := s.Data[0]
+	s.Data = util_int.UnsetArr(s.Data, 0)
 	return popped
 }
 
