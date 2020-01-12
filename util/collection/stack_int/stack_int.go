@@ -1,35 +1,6 @@
-package collection_int
+package stack_int
 
-func EqualArr(a []int, b []int) bool {
-	if len(a) != len(b) {
-		return false
-	}
-	for i, _ := range a {
-		if a[i] != b[i] {
-			return false
-		}
-	}
-	return true
-}
-
-func EqualDoubleArr(a [][]int, b [][]int) bool {
-	if len(a) != len(b) {
-		return false
-	}
-
-	for i, _ := range a {
-		if !EqualArr(a[i], b[i]) {
-			return false
-		}
-	}
-	return true
-}
-
-// 参考
-// https://qiita.com/usk81/items/5ff7bfe27f702d77e909
-func UnsetArr(s []int, i int) []int {
-	return append(s[:i], s[i+1:]...)
-}
+import "github.com/dyoshikawa/algo/util/collection/util_int"
 
 type Stack struct {
 	Data []int
@@ -50,7 +21,7 @@ func (s *Stack) Push(a int) {
 func (s *Stack) Pop() int {
 	last := len(s.Data) - 1
 	popped := s.Data[last]
-	s.Data = UnsetArr(s.Data, last)
+	s.Data = util_int.UnsetArr(s.Data, last)
 	return popped
 }
 
