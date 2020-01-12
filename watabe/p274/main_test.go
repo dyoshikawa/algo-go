@@ -23,7 +23,7 @@ var expected = [][]int{
 	{5, 6},
 }
 
-func TestInvoke(t *testing.T) {
+func TestInvokeRecursion(t *testing.T) {
 	if res := InvokeRecursion(n, as); !util.EqualDoubleArrInt(expected, res) {
 		t.Fatal(res)
 	}
