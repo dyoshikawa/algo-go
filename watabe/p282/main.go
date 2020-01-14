@@ -18,6 +18,9 @@ func Invoke(n int, as [][]int) [][]int {
 	visited := make([]bool, n)
 	start := 0
 	ds := make([]int, n)
+	for i, _ := range ds {
+		ds[i] = -1
+	}
 	ds[start] = 0
 	q := queue_int.NewQueue()
 	q.Push(start)
