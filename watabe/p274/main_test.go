@@ -1,4 +1,4 @@
-package p269
+package p274
 
 import (
 	"github.com/dyoshikawa/algo/util"
