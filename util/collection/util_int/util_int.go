@@ -30,3 +30,10 @@ func EqualDoubleArr(a [][]int, b [][]int) bool {
 func UnsetArr(s []int, i int) []int {
 	return append(s[:i], s[i+1:]...)
 }
+
+func SwapArr(arr []int, a int, b int) []int {
+	w := arr[a]
+	arr[a] = arr[b]
+	arr[b] = w
+	return arr
+}
