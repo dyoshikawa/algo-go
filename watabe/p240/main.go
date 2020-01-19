@@ -1,6 +1,7 @@
 package p240
 
 import (
+	"github.com/dyoshikawa/algo/util/collection/priority_queue_int"
 	"github.com/dyoshikawa/algo/util/collection/util_int"
 	"strconv"
 	"strings"
@@ -75,6 +76,25 @@ func Invoke(as []string) []int {
 			insert(key)
 		case "extract":
 			res = append(res, extract())
+		case "end":
+			break
+		}
+	}
+	return res
+}
+
+func InvokeAlt(as []string) []int {
+	pq := priority_queue_int.NewPriorityQueue()
+	res := make([]int, 0)
+	for _, s := range as {
+		ss := strings.Split(s, " ")
+		cmd := ss[0]
+		switch cmd {
+		case "insert":
+			key, _ := strconv.Atoi(ss[1])
+			pq.Push(key)
+		case "extract":
+			res = append(res, pq.Pop())
 		case "end":
 			break
 		}

@@ -1,9 +1,15 @@
 package priority_queue_int
 
-import "github.com/dyoshikawa/algo/util/collection/util_int"
+import (
+	"github.com/dyoshikawa/algo/util/collection/util_int"
+)
 
 type PriorityQueue struct {
 	Data []int
+}
+
+func NewPriorityQueue() *PriorityQueue {
+	return &PriorityQueue{Data: []int{}}
 }
 
 func parent(i int) int {
@@ -20,7 +26,7 @@ func parent(i int) int {
 
 func (pq *PriorityQueue) Push(key int) {
 	pq.Data = append(pq.Data, key)
-	i := len(pq.Data)
+	i := len(pq.Data) - 1
 	for i > 0 && pq.Data[parent(i)] < pq.Data[i] {
 		util_int.SwapArr(pq.Data, i, parent(i))
 		i = parent(i)
