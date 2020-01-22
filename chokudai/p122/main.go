@@ -15,7 +15,7 @@ func dfs(x int, y int, n int) float64 {
 
 	grid[x][y] = true
 	var ret float64 = 0
-	for i := 0; i < 4; i++ {
+	for i, _ := range prob {
 		ret += dfs(x+vx[i], y+vy[i], n-1) * prob[i]
 	}
 	grid[x][y] = false
